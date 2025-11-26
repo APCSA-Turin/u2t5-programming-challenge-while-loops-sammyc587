@@ -84,6 +84,9 @@ public class WhileLoops {
     */
    public static int countDownBy(int start, int step) {
        // YOUR CODE HERE
+       if (step <= 0){
+        return start;
+       }
        while (start > 0){
         int subtract = start/step;
 
@@ -171,6 +174,9 @@ public class WhileLoops {
        }
        while (startPercent > 0){
         int amount = (int)((((double)startPercent/perMinuteUse) + 0.5));
+        if (startPercent - (perMinuteUse*amount) > 0){
+            amount += 1;
+        }
         return amount;
        }
        return 0;
